@@ -1,12 +1,8 @@
-"use client"
-import { decode, encode } from "@googlemaps/polyline-codec";
-import Link from "next/link";
-import Client from "../client/page";
-import React, { useState } from 'react';
-
+import React from "react";
 const request=require('request');
+
+import { decode, encode } from "@googlemaps/polyline-codec";
 function TollsBtnOriginDestination() {
-    const [mapurl,setmapurl]=useState("");
 
     // const GoogleMapApi="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
     // const city='latur';
@@ -44,7 +40,7 @@ request(options, function (error, response, body) {
   if (error) throw new Error(error);
   const encoded =body.routes[0].polyline;
   console.log(decode(encoded,5));
-  setmapurl(body.routes[0].summary.url);
+ let setmapurl=body.routes[0].summary.url;
   console.log(body.routes[0].summary.url);
 //   console.log(body.routes[0].summary.distance);
 //   distance: { text: '173 mi', metric: '278 km', value: 278858 },
@@ -58,7 +54,7 @@ request(options, function (error, response, body) {
   return (
     <div>
       <h1>TollsBtnOriginDestination</h1>
-      <Client mapurl={mapurl}/>
+      {/* <Client mapurl={mapurl}/> */}
       {/* <Link href={mapurl}></Link> */}
     </div>
   )
@@ -70,28 +66,3 @@ export default TollsBtnOriginDestination;
 
 
 
-// const intigration=()=>{
-    //     let gmapspolyline;
-    //     // making gmaps request and extracting polyline from it
-    //     request.get(GoogleMapUrl,(e,r,body)=>{
-    //         // gmapspolyline=JSON.Parse(body)
-    //         // .routes[0].overview_polyline.points;
-    //         // console.log("polyline",gmapspolyline);
-    //         request.post({
-    //             url:TollguruUrl,
-    //             headers:{
-    //                 "content-type": "application/json",
-    //                 "x-api-key":TollguruKey
-    //               },
-    //               body:JSON.stringify({
-    //                 source:"google",
-    //         // polyline:gmapspolyline,
-    //                 vehicleType:'3AxlesTruck'   }),
-    //             },(e,r,body)=>{
-    //                 console.log(e);
-    //                 console.log(JSON.parse(body));
-    //               } 
-    //               );
-    //         });    
-    // }
-    // intigration();

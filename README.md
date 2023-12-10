@@ -69,3 +69,28 @@ request(options, function (error, response, body) {
 #google-map key:->   AIzaSyBaD1P0xqD33Hqq159hrFU5oY5oPIQUzqU
  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&llback=initMap"
 
+/ const intigration=()=>{
+    //     let gmapspolyline;
+    //     // making gmaps request and extracting polyline from it
+    //     request.get(GoogleMapUrl,(e,r,body)=>{
+    //         // gmapspolyline=JSON.Parse(body)
+    //         // .routes[0].overview_polyline.points;
+    //         // console.log("polyline",gmapspolyline);
+    //         request.post({
+    //             url:TollguruUrl,
+    //             headers:{
+    //                 "content-type": "application/json",
+    //                 "x-api-key":TollguruKey
+    //               },
+    //               body:JSON.stringify({
+    //                 source:"google",
+    //         // polyline:gmapspolyline,
+    //                 vehicleType:'3AxlesTruck'   }),
+    //             },(e,r,body)=>{
+    //                 console.log(e);
+    //                 console.log(JSON.parse(body));
+    //               } 
+    //               );
+    //         });    
+    // }
+    // intigration();
