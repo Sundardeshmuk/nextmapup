@@ -1,14 +1,8 @@
 import React from "react";
-import Client from "../client/page";
-import { GoogleMap,Marker,useLoadScript } from "@react-google-maps/api";
-
 const request=require('request');
-import { decode, encode } from "@googlemaps/polyline-codec";
+import Page from "../gmap/page";
+// import { decode, encode } from "@googlemaps/polyline-codec";
 const TollsBtnOriginDestination=()=> {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey:"AIzaSyBaD1P0xqD33Hqq159hrFU5oY5oPIQUzqU" ,
-  });
-  const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
   
    let mapurl="ramanjjihij";
     // const GoogleMapApi="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
@@ -61,21 +55,8 @@ const TollsBtnOriginDestination=()=> {
     
   return (
     <div>
-      <h1>TollsBtnOriginDestination</h1>
-      
-      <Client mapurl={mapurl}/>
-      {/* <Link href={mapurl}></Link> */}
-      {!isLoaded ? (
-        <h1>Loading...</h1>
-      ) : (
-        <GoogleMap
-        mapContainerClassName="map-container"
-        center={center}
-        zoom={10}
-      >
-        <Marker position={{ lat: 18.52043, lng: 73.856743 }} />
-      </GoogleMap>
-      )}
+      <h1>TollsBtnOriginDestination</h1>      
+     <Page/>
     </div>
   )
 }
