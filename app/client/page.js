@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const Client=(props)=> {
-  const [mapurl,setmapurl]=useState("");
+  // const [mapurl,setmapurl]=useState("");
 
   return (
     <div>
